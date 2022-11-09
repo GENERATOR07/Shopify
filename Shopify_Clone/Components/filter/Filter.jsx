@@ -1,4 +1,3 @@
-import { list } from "postcss";
 import { useEffect, useState } from "react";
 
 export default function Filter() {

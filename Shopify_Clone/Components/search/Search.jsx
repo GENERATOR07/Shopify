@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Search() {
   return (
-    <div className=" flex items-center ">
+    <div className=" flex items-center relative left-24 ">
       <input
         className="h-10 w-96 text-center rounded-l-md"
         placeholder="search"

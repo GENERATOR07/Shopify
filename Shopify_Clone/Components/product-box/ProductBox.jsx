@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Product from "../product/product";
-
+import { Link } from "react-router-dom";
 export default function ProductBox() {
   const [products, setProducts] = useState([]);
 
