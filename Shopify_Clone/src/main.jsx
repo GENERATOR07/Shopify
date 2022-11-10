@@ -2,14 +2,16 @@ import App from "./app";
 import { createRoot } from "react-dom/client";
 import "./main.css";
 import { BrowserRouter } from "react-router-dom";
-import Product from "../Components/product/product";
 
+import { CartContextProvider } from "../context/CartContext";
 const app = document.getElementById("root");
 
 const root = createRoot(app);
 
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <CartContextProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </CartContextProvider>
 );

@@ -20,7 +20,7 @@ export default function ProductDetails() {
       >
         back to products
       </h3>
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-2 items-center p-2">
         <div className="w-1/3">
           <img className="w-full" src={ProductDetails.image} />
         </div>

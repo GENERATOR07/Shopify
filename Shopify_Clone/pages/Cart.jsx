@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import CartContext from "../context/CartContext";
+import CardProductList from "../Components/cartProductList/CardProductList";
 
 export default function Cart() {
+  const { state } = useContext(CartContext);
+  console.log(state);
   return (
     <div>
-      <h1>welcome to cart</h1>
+      <CardProductList products={state} />
     </div>
   );
 }
