@@ -1,19 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Product from "../product/product";
 import { Link } from "react-router-dom";
+import ProductContext from "../../context/ProductContext";
 export default function ProductBox() {
-  const [products, setProducts] = useState([]);
-
+  const { product, dispatch } = useContext(ProductContext);
+  console.log(product);
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
-      .then((data) => setProducts([...data]));
+      .then((data) => {
+        dispatch({
+          type: "getProducts",
+          payload: { data, label: "All Products" },
+        });
+      });
   }, []);
   return (
     <div className="mt-1 ml-1 p-2   w-4/5 border-2 border-gray-400 bg-gray-100 grid grid-cols-4 gap-4">
-      {products.map((product) => (
-        <Product key={product.id} product={product} />
-      ))}
+      <h1 className="text-xl col-span-4">{product.label}</h1>
+      {product?.productData?.map((product) => {
+        return <Product key={product.id} product={product} />;
+      })}
     </div>
   );
 }
