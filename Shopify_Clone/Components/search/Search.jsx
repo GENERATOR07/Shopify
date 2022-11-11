@@ -1,4 +1,5 @@
 import React from "react";
+import { MagnifyingGlass } from "phosphor-react";
 
 export default function Search() {
   return (
@@ -8,7 +9,9 @@ export default function Search() {
         placeholder="search"
       />
       <div className="p-2 h-10 bg-orange-400  text-black rounded-r-md">
-        <button>search</button>
+        <button>
+          <MagnifyingGlass size={24} weight="regular" />
+        </button>
       </div>
     </div>
   );
