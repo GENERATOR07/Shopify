@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState, useContext } from "react";
 import ProductContext from "../../context/ProductContext";
 
@@ -5,15 +6,15 @@ export default function Filter() {
   const [categories, setCategories] = useState([]);
   const { dispatch } = useContext(ProductContext);
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/categories")
-      .then((res) => res.json())
-      .then((json) => setCategories(json));
+    axios
+      .get("https://fakestoreapi.com/products/categories")
+      .then(({ data }) => setCategories(data));
   }, []);
   const handelClick = (e) => {
     let category = e.target.innerText;
-    fetch(`https://fakestoreapi.com/products/category/${category}`)
-      .then((res) => res.json())
-      .then((data) =>
+    axios
+      .get(`https://fakestoreapi.com/products/category/${category}`)
+      .then(({ data }) =>
         dispatch({ type: "getProducts", payload: { data, label: category } })
       );
   };

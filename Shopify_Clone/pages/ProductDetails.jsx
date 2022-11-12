@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowCircleLeft } from "phosphor-react";
 import CartContext from "../context/CartContext";
+import axios from "axios";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -10,9 +11,9 @@ export default function ProductDetails() {
   const { dispatch } = useContext(CartContext);
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-      .then((res) => res.json())
-      .then((json) => setProductDetails({ ...json }));
+    axios
+      .get(`https://fakestoreapi.com/products/${id}`)
+      .then(({ data }) => setProductDetails({ ...data }));
   }, []);
   return (
     <div className="divide-y-2">

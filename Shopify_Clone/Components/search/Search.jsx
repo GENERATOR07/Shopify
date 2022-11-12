@@ -1,19 +1,18 @@
 import { useState, useContext } from "react";
 import { MagnifyingGlass } from "phosphor-react";
 import ProductContext from "../../context/ProductContext";
+import axios from "axios";
 
 export default function Search() {
   const [search, setSearch] = useState("");
   const { dispatch } = useContext(ProductContext);
   const handelSearch = () => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        dispatch({
-          type: "search",
-          payload: { data, search, label: "Search Results" },
-        });
+    axios.get("https://fakestoreapi.com/products").then(({ data }) => {
+      dispatch({
+        type: "search",
+        payload: { data, search, label: "Search Results" },
       });
+    });
   };
 
   return (
