@@ -1,11 +1,11 @@
-import React from "react";
 import { ArrowCircleLeft } from "phosphor-react";
 import { useNavigate } from "react-router-dom";
-
+import CheckoutForm from "../Components/checkoutForm/CheckoutForm";
+import CartSummary from "../Components/cartSummary/CartSummary";
 export default function Checkout() {
   const nav = useNavigate();
   return (
-    <div>
+    <div className=" bg-gray-100 " style={{ minHeight: "100vh" }}>
       <div
         onClick={() => {
           nav(-1);
@@ -14,10 +14,15 @@ export default function Checkout() {
       >
         <div className="flex">
           <ArrowCircleLeft size={24} />
-          back to products
         </div>
       </div>
-      <h1>welcome to checkout page</h1>
+      <div
+        className="w-screen flex  "
+        style={{ justifyContent: "space-evenly" }}
+      >
+        <CheckoutForm />
+        <CartSummary />
+      </div>
     </div>
   );
 }
