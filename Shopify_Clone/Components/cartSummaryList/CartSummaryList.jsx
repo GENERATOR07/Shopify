@@ -7,7 +7,7 @@ export default function CartSummaryList({ products }) {
       {products.map((product) => {
         return (
           <div
-            className=" flex justify-between gap-2 font-semibold"
+            className=" flex justify-between gap-2 font-medium text-gray-700"
             key={product.id}
           >
             <p>

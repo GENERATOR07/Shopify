@@ -9,7 +9,7 @@ export default function CartSummary() {
   return (
     <div className="bg-white p-2 w-1/4 flex flex-col divide-y-2 mt-7 border-2 border-gray-200 ">
       <h1 className="flex stext-xl font-bold items-center gap-1">
-        <ShoppingCart />
+        <ShoppingCart weight="bold" />
         Cart Summary
       </h1>
       <CartSummaryList products={state} />

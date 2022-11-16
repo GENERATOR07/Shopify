@@ -19,13 +19,13 @@ export default function Filter() {
       );
   };
   return (
-    <div className="mt-1 p-2 self-stretch w-1/5 border-2 border-gray-300 bg-gray-200">
+    <div className="mt-1 p-2 self-stretch w-1/5 border-2 border-gray-300 ">
       <div className="sticky top-4">
-        <h1 className="text-2xl">Categories</h1>
-        <hr className=" bg-gray-200" />
-        <ul>
+        <h1 className="text-2xl font-serif">Categories</h1>
+
+        <ul className="divide-y-2 py-2">
           {categories.map((c) => (
-            <li onClick={handelClick} className="cursor-pointer " key={c}>
+            <li onClick={handelClick} className="cursor-pointer py-1" key={c}>
               {c}
             </li>
           ))}
