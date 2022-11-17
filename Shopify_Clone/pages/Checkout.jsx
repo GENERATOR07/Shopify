@@ -1,6 +1,6 @@
 import { ArrowCircleLeft } from "phosphor-react";
 import { useNavigate } from "react-router-dom";
-import CheckoutForm from "../Components/checkoutForm/CheckoutForm1";
+import CheckoutForm from "../Components/checkoutForm/CheckOutForm";
 import CartSummary from "../Components/cartSummary/CartSummary";
 export default function Checkout() {
   const nav = useNavigate();

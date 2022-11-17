@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function CartSummaryList({ products }) {
-  console.log("potan", products);
   return (
     <div className="flex flex-col gap-2 py-2 ">
       {products.map((product) => {
