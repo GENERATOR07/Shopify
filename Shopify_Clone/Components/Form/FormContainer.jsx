@@ -6,6 +6,7 @@ const initialValues = {
   email: "",
   add: "",
   phone: "",
+  payment: "",
 };
 const onSubmit = (val, props) => {
   console.log(val);
@@ -24,8 +25,14 @@ const validationSchema = Yup.object({
   phone: Yup.string()
     .matches(phoneRegExp, "Phone number is not valid")
     .required("Required !"),
+  payment: Yup.string().required("Required !"),
 });
-
+const paymentMethods = [
+  { key: "Select Payment Method", value: "" },
+  { key: "Bank", value: "bank" },
+  { key: "Upi", value: "upi" },
+  { key: "Cash on Delivery", value: "cod" },
+];
 export default function FormContainer() {
   return (
     <Formik
@@ -63,6 +70,14 @@ export default function FormContainer() {
               label="Address"
               control="input"
               className="rounded p-1"
+            />
+            <FormControl
+              type="select"
+              name="payment"
+              label="Payment"
+              control="select"
+              className="rounded p-1"
+              options={paymentMethods}
             />
 
             <button
