@@ -17,15 +17,15 @@ export default function ProductDetails() {
   }, []);
   return (
     <div className="divide-y-2">
-      <h3
-        onClick={() => {
-          nav(-1);
-        }}
-        className="flex"
-      >
-        <ArrowCircleLeft size={24} />
+      <div className="flex">
+        <ArrowCircleLeft
+          onClick={() => {
+            nav(-1);
+          }}
+          size={24}
+        />
         back to products
-      </h3>
+      </div>
       <div className="flex gap-2 items-center p-2">
         <div className="w-1/3">
           <img className="w-full" src={ProductDetails.image} />

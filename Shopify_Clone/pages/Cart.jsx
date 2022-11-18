@@ -12,14 +12,14 @@ export default function Cart() {
 
   return (
     <div className="divide-y-2 flex flex-col ">
-      <div
-        onClick={() => {
-          nav(-1);
-        }}
-        className="flex mb-7 justify-between p-2"
-      >
+      <div className="flex mb-7 justify-between p-2">
         <div className="flex">
-          <ArrowCircleLeft size={24} />
+          <ArrowCircleLeft
+            onClick={() => {
+              nav(-1);
+            }}
+            size={24}
+          />
           back to products
         </div>
         <h1 className="text-xl">Price</h1>
