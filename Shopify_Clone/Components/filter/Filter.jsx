@@ -19,7 +19,7 @@ export default function Filter() {
       );
   };
   return (
-    <div className="mt-1 p-2 self-stretch w-1/5 border-2 border-gray-300 ">
+    <div className="mt-1 p-2 self-stretch w-1/5 border-2 border-gray-300 hidden lg:block">
       <div className="sticky top-4">
         <h1 className="text-2xl font-serif">Categories</h1>
 

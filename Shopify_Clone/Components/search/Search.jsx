@@ -16,9 +16,9 @@ export default function Search() {
   };
 
   return (
-    <div className=" flex items-center relative left-24 ">
+    <div className=" flex items-center relative lg:left-24 ">
       <input
-        className="h-10 w-96 text-center rounded-l-md"
+        className="h-10 lg:w-96 text-center rounded-l-md"
         placeholder="search"
         onChange={(e) => setSearch(e.target.value)}
       />
