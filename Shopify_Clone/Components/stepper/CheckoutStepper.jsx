@@ -2,7 +2,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormControl from "../Form/FormControl";
 import React, { useState } from "react";
-import PaymentControl from "../form/PaymentControl";
+
 import PaymentContainer from "../checkout/PaymentContainer";
 export const FormikStepper = ({ children, paymentMethod, ...props }) => {
   const [step, setStep] = useState(0);
@@ -94,8 +94,8 @@ const CheckoutStepper = () => {
       validationSchema={validationSchema}
       paymentMethod={paymentMethod}
     >
-      <div className="flex flex-col gap-4  ">
-        <div className="mb-2 text-lg font-semibold flex justify-between items-center">
+      <div className="flex flex-col gap-3  ">
+        <div className=" text-lg font-semibold flex justify-between items-center">
           Enter shipping Details
         </div>
         <FormControl
