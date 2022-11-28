@@ -1,10 +1,12 @@
 import FormControl from "../FormControl";
 
-export default function Bank() {
+import { useState } from "react";
+
+export default function Bank({ initialValues }) {
   return (
     <>
       <FormControl
-        name="paymentDetails.cardNumber"
+        name="paymentDetails.card.cardNumber"
         label="Card Number"
         control="input"
         className="rounded p-1"
@@ -35,7 +37,7 @@ export default function Bank() {
         <FormControl
           type="password"
           name="paymentDetails.card.cvv"
-          label="CVV"
+          label="Cvc"
           control="input"
           className="rounded p-1"
           maxLength={3}

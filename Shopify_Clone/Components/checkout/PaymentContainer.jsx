@@ -1,17 +1,14 @@
 import React from "react";
 import PaymentControl from "../form/PaymentControl";
-import { useContext } from "react";
-import FormContext from "../../context/formContext";
 
-export default function PaymentContainer({ method }) {
-  const { formData } = useContext(FormContext);
+export default function PaymentContainer({ method, initialValues }) {
   return (
     <div className=" bg-gray-100   py-2 font-mono">
-      <div className="mb-4 text-lg font-semibold flex justify-between items-center">
+      <div className="mb-2 text-lg font-semibold flex justify-between items-center">
         Enter Payment Details
       </div>
       <div>
-        <PaymentControl method={method} />
+        <PaymentControl method={method} initialValues={initialValues} />
       </div>
     </div>
   );
