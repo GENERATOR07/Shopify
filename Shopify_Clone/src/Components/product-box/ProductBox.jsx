@@ -14,7 +14,7 @@ export default function ProductBox() {
     });
   }, []);
   return (
-    <div className="mt-1 ml-1 p-2  lg:w-4/5 border-2 border-gray-400 bg-gray-100 sm:grid sm:grid-cols-4 gap-4">
+    <div className="mt-1 ml-1 p-2  border-2 border-gray-400 bg-gray-100 sm:grid sm:grid-cols-4  col-span-4">
       <h1 className="text-xl col-span-4">{product.label}</h1>
       {product?.productData?.map((product) => {
         return <Product key={product.id} product={product} />;
