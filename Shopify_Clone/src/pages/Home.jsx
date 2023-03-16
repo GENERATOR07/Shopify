@@ -3,7 +3,7 @@ import ProductBox from "../Components/product-box/ProductBox";
 
 export default function Home() {
   return (
-    <div className="flex">
+    <div className="grid grid-cols-5">
       <Filter />
       <ProductBox />
     </div>
